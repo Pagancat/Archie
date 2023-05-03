@@ -1,0 +1,33 @@
+## Muh i3blocks config
+
+# Global properties
+separator=false
+separator_block_width=2
+
+#[muh-weather]
+#background=#00f5e6
+#color=#000000
+#command=echo "$(curl --silent https://wttr.in\?format\=3) " | cut -c 27-
+#interval=3600 
+
+[muh-disk-space]
+background=#20a089
+color=#000000
+label= 
+command=echo "$(df -h / --output=avail | tail -n -1) "
+interval=6000
+
+[cpu]
+background=#00f5e6
+#border=#000000
+color=#000000
+label=  CPU
+command=sensors | grep "Core 0" | awk '{print $3 " " }'
+interval=10 
+
+[time]
+background=#20a089
+#border=#000000
+color=#000000
+command=echo "  $(date '+%d-%m-%Y %H:%M') "
+interval=1
